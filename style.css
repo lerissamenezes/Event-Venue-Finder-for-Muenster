@@ -1,0 +1,265 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1a2e;
+  --cream: #f5f0e8;
+  --accent: #e06c3a;
+  --accent2: #3a7de0;
+  --surface: #ffffffee;
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────────────── */
+
+header {
+  padding: 14px 24px;
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+
+header span {
+  font-size: 0.78rem;
+  opacity: 0.55;
+  font-weight: 300;
+  margin-left: auto;
+}
+
+/* ── MAP ────────────────────────────────────────────────────────────── */
+
+#map { flex: 1; }
+
+/* ── LEGEND ─────────────────────────────────────────────────────────── */
+
+.legend {
+  position: absolute;
+  bottom: 32px;
+  left: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 14px 18px;
+  z-index: 500;
+  box-shadow: var(--shadow);
+  font-size: 0.82rem;
+}
+
+.legend h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── POPUP WRAPPER ──────────────────────────────────────────────────── */
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+  padding: 0 !important;
+  overflow: hidden;
+  min-width: 260px;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.leaflet-popup-tip-container { margin-top: -1px; }
+
+.leaflet-routing-container {
+  display: none !important;
+}
+
+/* ── VENUE POPUP ────────────────────────────────────────────────────── */
+
+.popup-header {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 18px 10px;
+}
+
+.popup-header .venue-type {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.popup-header h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.popup-body {
+  padding: 12px 18px 16px;
+  background: #fff;
+}
+
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 0.82rem;
+}
+
+.popup-row .label {
+  color: #888;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+.popup-row .value {
+  color: var(--ink);
+  text-align: right;
+}
+
+/* ── BUS STOP HIGHLIGHT ROW ─────────────────────────────────────────── */
+
+.popup-row.busstop-row {
+  background: #eef4ff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.popup-row.busstop-row .label {
+  color: var(--accent2);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: unset;
+}
+
+.popup-row.busstop-row .value {
+  color: var(--ink);
+  text-align: left;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.popup-row.busstop-row .distance {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* ── TAGS & BADGES ──────────────────────────────────────────────────── */
+
+.popup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.popup-tag {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 99px;
+  padding: 2px 9px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.popup-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.badge-yes { background: #d4f0dc; color: #1a6b30; }
+.badge-no  { background: #fde8e8; color: #a02020; }
+
+/* ── POPUP FOOTER ───────────────────────────────────────────────────── */
+
+.popup-footer {
+  padding: 8px 18px 12px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.78rem;
+}
+
+.popup-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.popup-footer a:hover { text-decoration: underline; }
+
+/* ── BUS STOP POPUP ─────────────────────────────────────────────────── */
+
+.busstop-popup h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.busstop-popup .stop-id {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* ── TOOLTIP ────────────────────────────────────────────────────────── */
+
+.leaflet-tooltip {
+  background: var(--ink) !important;
+  color: var(--cream) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.8rem !important;
+  padding: 5px 10px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+  white-space: nowrap;
+}
+
+.leaflet-tooltip::before {
+  border-top-color: var(--ink) !important;
+}

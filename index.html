@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Münster Event Venue Finder</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>Münster Event Venue Finder</h1>
+  </header>
+
+  <div id="map"></div>
+
+  <div class="legend">
+    <h4>Legend</h4>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#e06c3a;"></div>
+      Event Venues
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#3a7de0;"></div>
+      Bus Stops
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+  <script src="map.js"></script>
+
+</body>
+</html>
