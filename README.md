@@ -2,8 +2,6 @@
 
 A web-based GIS application: an interactive map for discovering event venues in Münster, with public transport accessibility built in.
 
-**Authors:** Khanh Giang Le (556087) · Lerissa Merril Menezes (564864)
-
 ## Overview
 
 | | |
