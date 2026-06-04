@@ -81,6 +81,12 @@ Popup attributes:
 3. **Call OSRM** — Pedestrian routing via `routing.openstreetmap.de`.
 4. **Draw route** — Blue polyline; the previous route is removed first.
 
+   <img width="1075" height="642" alt="image" src="https://github.com/user-attachments/assets/6463c303-cb4c-47e4-b542-78606b899625" />
+   <img width="972" height="645" alt="image" src="https://github.com/user-attachments/assets/6b1bb59b-b88d-40db-a195-b9f03186d29a" />
+   <img width="1049" height="643" alt="image" src="https://github.com/user-attachments/assets/81bcd7d5-12f2-44d6-a8b7-43e7c7d85f0e" />
+
+
+
 ## Challenges & Lessons Learned
 
 - **CORS configuration** — `web.xml` `CrossOriginFilter` with `chainPreflight=false` required for Jetty 10. Both the filter and filter-mapping blocks were needed.
